@@ -6,13 +6,19 @@
 <title>Ejemplo :: Mi primera página</title>
 </head>
 <header style="background-color: blue; color: white;">
-	<b>HEADER</b>
+	<b>EJEMPLO CON SERVLETS</b>
 </header>
 <body>
+	
 	<div>
-		<h1>Ejemplo 1 : Probando contenido</h1>
-		<p>Esto es una prueba</p>
+		<form name="FORM1" METHOD="POST" ACTION="ServletDemo">
+			<p>
+			Nombre: <input type= text NAME="NOM" SIZE="25">
+			<p>
+			<input type = SUBMIT VALUE= "Enviar">
+		</form>
 	</div>
+	
 </body>
 <footer style="background-color: red;color: white;">FOOTER</footer>
 </html>

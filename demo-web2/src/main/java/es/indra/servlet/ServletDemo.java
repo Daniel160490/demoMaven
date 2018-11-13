@@ -34,7 +34,7 @@ public class ServletDemo extends HttpServlet {
 		/*
 		 * En este ejemplo se utiliza cuando quieres enviar mas parametros
 		 */
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("hola.jsp");
 		requestDispatcher.forward(request, response);
 		
 		/*
@@ -46,6 +46,7 @@ public class ServletDemo extends HttpServlet {
 		 * Esto otro ejemplo de reedirigir la peticion a otro lugar.
 		 */
 		//response.sendRedirect("");
+		
 	}
 
 	/**
