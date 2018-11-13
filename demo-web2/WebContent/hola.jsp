@@ -10,12 +10,14 @@
 	
 	<body>
 		<div>
+		<!-- Declaro variable para recoger datos del otro jsp -->
 			<%! 
 				String mensaje; %>
 			<%
 				mensaje = request.getParameter("NOM");
 			%>
-			<p> Hola, <%= mensaje %> </p> 
+			<!-- esto hace lo mismo que si le paso la variable mensaje -->
+			<p> Hola, <%= request.getParameter("NOM") %> </p> 
 		
 		</div>
 	</body>

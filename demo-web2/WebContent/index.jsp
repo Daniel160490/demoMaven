@@ -2,23 +2,17 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<head>
-<title>Ejemplo :: Mi primera página</title>
-</head>
-<header style="background-color: blue; color: white;">
-	<b>EJEMPLO CON SERVLETS</b>
-</header>
-<body>
+	<head>
+		<title>Ejemplo :: Mi primera página</title>
+	</head>
 	
-	<div>
-		<form name="FORM1" METHOD="POST" ACTION="ServletDemo">
-			<p>
-			Nombre: <input type= text NAME="NOM" SIZE="25">
-			<p>
-			<input type = SUBMIT VALUE= "Enviar">
-		</form>
-	</div>
+	<%@ include file="header.jsp" %>
 	
-</body>
-<footer style="background-color: red;color: white;">FOOTER</footer>
+	<body>
+		
+		<%@ include file="formulario.jsp" %>
+		
+	</body>
+	
+	<%@ include file="footer.jsp" %>
 </html>
