@@ -3,7 +3,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Ejemplo :: Mi primera página</title>
+		<title>Ejemplo :: Mi primera pagina</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">   		
+        <script src="js/bootstrap.min.js"></script>
 	</head>
 	
 	<%@ include file="header.jsp" %>
