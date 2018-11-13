@@ -12,7 +12,7 @@
 			Bienvenido,
 			<%=request.getParameter("NOM")%>
 		</p>
-
 	</div>
 </body>
+<%@ include file="footer.jsp" %>
 </html>

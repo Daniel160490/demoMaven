@@ -42,7 +42,18 @@
 				Contraseña: <input class="form-control" type=password NAME="pass"
 					SIZE="25">
 			</div>
+
 			<p>
+			<div class="form-label-group">
+				<select name="idioma">
+					<option option selected value="0">Selecciona un idioma</option>
+					<option value="español">Español</option>
+					<option value="ingles">Ingles</option>
+				</select>
+			</div>
+
+			<br>
+
 				<input class="btn btn-lg btn-primary btn-block" type=SUBMIT
 					VALUE="Acceder">
 		</div>
