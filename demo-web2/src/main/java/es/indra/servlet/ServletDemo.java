@@ -3,6 +3,7 @@ package es.indra.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,16 +30,22 @@ public class ServletDemo extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		//	EJEMPLOS DE REEDIRECCION DE JSP.
+		/*
+		 * En este ejemplo se utiliza cuando quieres enviar mas parametros
+		 */
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+		requestDispatcher.forward(request, response);
 		
-		PrintWriter pw = response.getWriter();
-		pw.append("<h1> Bienvenido </h1>");
-		pw.append("<p> Hola </p>");
-		pw.append("<p> Daniel </p>");
+		/*
+		 * Cuando solo tenemos una pagina se puede hacer en una sola linea
+		 */
+		//request.getRequestDispatcher("index.jsp").forward(request, response);
 		
-		//pw.close();
-		//Redirige al index.jsp
-		request.getRequestDispatcher("index.jsp").forward(request, response);
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		/*
+		 * Esto otro ejemplo de reedirigir la peticion a otro lugar.
+		 */
+		//response.sendRedirect("");
 	}
 
 	/**
