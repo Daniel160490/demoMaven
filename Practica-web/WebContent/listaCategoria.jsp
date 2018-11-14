@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@page import="java.util.List"%>
+	<%@page import="es.indra.beans.Categoria"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,14 +10,22 @@
 </head>
 <body>
 
-	<div>
-	<h1>Listado de Categorias</h1>
-		<p>
-			<%=request.getParameter("nombre")%>
-		</p>
-		<br>
-		<a class="btn btn-lg btn-primary btn-block" href="index.jsp">ATRAS</a>
-	</div>
+
+	<table>
+
+		<%
+			List<Categoria> todas = (List<Categoria>) request.getAttribute("listaCategoria");
+			for (Categoria cats : todas) {
+		%>
+		<tr>
+			<td><%=cats.getId()%></td>
+			<td><%=cats.getNombre()%></td>
+		</tr>
+
+		<%
+			}
+		%>
+	</table>
 
 </body>
 </html>

@@ -13,7 +13,7 @@
 		ACTION="Servlet">
 		<div class="text-center mb-4">
 			<div class="form-label-group">
-				ID: <input class="form-control" type=text NAME="id" SIZE="25">
+				ID: <input class="form-control" type=number NAME="id" SIZE="4">
 			</div>
 			<br>
 			<div class="form-label-group">
