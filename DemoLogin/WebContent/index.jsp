@@ -31,7 +31,7 @@
 <body>
 
 	<form class="form-signin" name="FORM1" METHOD="POST"
-		ACTION="ServletLogin">
+		ACTION="Servlet">
 		<div class="text-center mb-4">
 			<div class="form-label-group">
 

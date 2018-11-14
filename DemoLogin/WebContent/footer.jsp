@@ -6,7 +6,7 @@
 
 	IDIOMA SELECCIONADO:
 	<%
-	out.println(session.getValue("idioma"));
+	//out.println(session.getValue("idioma"));
 	%>
 	<%
 		Cookie[] cookies = request.getCookies();
@@ -15,7 +15,7 @@
 			String identificador = cookieActual.getName();
 			String valor = cookieActual.getValue();
 			if (identificador.equals("usuario")) {
-				// alguna operacion
+				out.println(session.getValue(valor));
 			}
 		}
 	%>
