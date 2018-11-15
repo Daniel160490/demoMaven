@@ -4,6 +4,7 @@
 package es.indra.demoblog.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -29,7 +30,16 @@ public class BlogServiceImpl implements BlogService {
 
 	@Override
 	public Blog getBlogById(int id) {
-		return this.blogRepository.getOne(id);
+
+		/*
+		 * Optional se usa por si lo que se esta buscando no está
+		 */
+		Optional<Blog> blog0 = this.blogRepository.findById(id);
+		if (blog0.isPresent()) {
+			return blog0.get();
+
+		}
+		return null;
 	}
 
 	@Override
@@ -44,6 +54,11 @@ public class BlogServiceImpl implements BlogService {
 
 	@Override
 	public Blog updateBlog(Blog blog) {
+
+		if (this.getBlogById(blog.getId()) != null) {
+			return this.blogRepository.save(blog);
+		}
+
 		return null;
 	}
 

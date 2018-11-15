@@ -39,8 +39,12 @@ public class BlogController {
 
 	@RequestMapping(value = "/blog/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Blog> getToDoById(@PathVariable("id") int id) {
-
-		return new ResponseEntity<Blog>(blogService.getBlogById(id), HttpStatus.OK);
+		Blog b = this.blogService.getBlogById(id);
+		if (b == null) {
+			return new ResponseEntity<Blog>(b, HttpStatus.NOT_FOUND);
+		} else {
+			return new ResponseEntity<Blog>(b, HttpStatus.OK);
+		}
 	}
 
 	@RequestMapping(value = "/blog", method = RequestMethod.POST)
@@ -56,9 +60,17 @@ public class BlogController {
 	 * 
 	 * }
 	 */
+
 	@RequestMapping(value = "/blog", method = RequestMethod.PUT)
-	public ResponseEntity<Blog> updateToDo(@RequestBody Blog blog) {
-		return new ResponseEntity<Blog>(blogService.saveBlog(blog), HttpStatus.OK);
+	public ResponseEntity<Blog> updateToDo(@RequestBody Blog b) {
+
+		Blog blog = this.blogService.updateBlog(b);
+
+		if (blog == null) {
+			return new ResponseEntity<Blog>(blog, HttpStatus.OK);
+		} else {
+			return new ResponseEntity<Blog>(blog, HttpStatus.ACCEPTED);
+		}
 
 	}
 
