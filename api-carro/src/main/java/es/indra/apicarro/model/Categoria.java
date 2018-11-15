@@ -3,13 +3,20 @@
  */
 package es.indra.apicarro.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * @author daniel
  *
  */
+@Entity
 public class Categoria {
-	int id;
 
+	@Id
+	@GeneratedValue
+	int id;
 	String nombre;
 
 	public Categoria(int id, String nombre) {

@@ -5,12 +5,15 @@ package es.indra.apicarro.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import es.indra.apicarro.model.Categoria;
 
 /**
  * @author daniel
  *
  */
+@Service
 public interface CategoriaService {
 
 	public List<Categoria> getAllCategoria();
