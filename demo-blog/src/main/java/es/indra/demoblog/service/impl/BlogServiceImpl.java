@@ -41,7 +41,10 @@ public class BlogServiceImpl implements BlogService {
 	public void removeBlog(Blog blog) {
 		this.blogRepository.delete(blog);
 	}
-	
-	
-	
+
+	@Override
+	public Blog updateBlog(Blog blog) {
+		return null;
+	}
+
 }

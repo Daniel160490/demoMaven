@@ -44,17 +44,25 @@ public class BlogController {
 	}
 
 	@RequestMapping(value = "/blog", method = RequestMethod.POST)
-	public ResponseEntity<Blog> saveToDo(@RequestBody Blog blog) {
-		return new ResponseEntity<Blog>(blogService.saveBlog(blog), HttpStatus.OK);
-
+	public ResponseEntity<Void> crearBlog(@RequestBody Blog b) {
+		Blog blog = this.blogService.saveBlog(b);
+		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 
+	/*
+	 * @RequestMapping(value = "/blog", method = RequestMethod.POST) public
+	 * ResponseEntity<Blog> saveToDo(@RequestBody Blog blog) { return new
+	 * ResponseEntity<Blog>(blogService.saveBlog(blog), HttpStatus.OK);
+	 * 
+	 * }
+	 */
 	@RequestMapping(value = "/blog", method = RequestMethod.PUT)
 	public ResponseEntity<Blog> updateToDo(@RequestBody Blog blog) {
 		return new ResponseEntity<Blog>(blogService.saveBlog(blog), HttpStatus.OK);
 
 	}
 
+	@RequestMapping(value = "/blog/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<String> removeToDoById(@PathVariable("id") int id) {
 		Blog blog = blogService.getBlogById(id);
 		blogService.removeBlog(blog);

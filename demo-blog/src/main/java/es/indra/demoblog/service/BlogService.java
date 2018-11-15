@@ -17,10 +17,12 @@ import es.indra.demoblog.model.Blog;
 public interface BlogService {
 
 	public List<Blog> getAllBlog();
-	
+
 	public Blog getBlogById(int id);
-	
+
+	public Blog updateBlog(Blog blog);
+
 	public Blog saveBlog(Blog blog);
-	
+
 	public void removeBlog(Blog blog);
 }
