@@ -67,9 +67,9 @@ public class BlogController {
 		Blog blog = this.blogService.updateBlog(b);
 
 		if (blog == null) {
-			return new ResponseEntity<Blog>(blog, HttpStatus.OK);
+			return new ResponseEntity<Blog>(blog, HttpStatus.BAD_REQUEST);
 		} else {
-			return new ResponseEntity<Blog>(blog, HttpStatus.ACCEPTED);
+			return new ResponseEntity<Blog>(blog, HttpStatus.OK);
 		}
 
 	}
