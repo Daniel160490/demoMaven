@@ -27,7 +27,7 @@ public class CategoriaController {
 	@Autowired
 	CategoriaService categoriaService;
 
-	@RequestMapping(value = "/blog", method = RequestMethod.GET)
+	@RequestMapping(value = "/categoria", method = RequestMethod.GET)
 	public ResponseEntity<List<Categoria>> getAllCategoria() {
 
 		List<Categoria> todosLosBlogs = this.categoriaService.getAllCategoria();
@@ -36,7 +36,7 @@ public class CategoriaController {
 		return response;
 	}
 
-	@RequestMapping(value = "/blog/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/categoria/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Categoria> getToDoById(@PathVariable("id") int id) {
 		Categoria c = this.categoriaService.getCategoriaById(id);
 		if (c == null) {
@@ -46,7 +46,7 @@ public class CategoriaController {
 		}
 	}
 
-	@RequestMapping(value = "/blog", method = RequestMethod.POST)
+	@RequestMapping(value = "/categoria", method = RequestMethod.POST)
 	public ResponseEntity<Void> crearBlog(@RequestBody Categoria c) {
 		Categoria categoria = this.categoriaService.saveCategoria(c);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
@@ -65,10 +65,10 @@ public class CategoriaController {
 
 	}
 
-	@RequestMapping(value = "/blog/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/categoria/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<String> removeToDoById(@PathVariable("id") int id) {
 		Categoria categoria = categoriaService.getCategoriaById(id);
 		categoriaService.removeCategoria(categoria);
-		return new ResponseEntity<String>("Blog eliminado", HttpStatus.OK);
+		return new ResponseEntity<String>("Categoria eliminada", HttpStatus.OK);
 	}
 }
