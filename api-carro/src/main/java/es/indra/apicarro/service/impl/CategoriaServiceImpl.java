@@ -9,6 +9,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import es.indra.apicarro.aspects.anotaciones.MedidorDeTiempo;
 import es.indra.apicarro.model.Categoria;
 import es.indra.apicarro.repository.CategoriaRepository;
 import es.indra.apicarro.service.CategoriaService;
@@ -24,6 +25,7 @@ public class CategoriaServiceImpl implements CategoriaService {
 	CategoriaRepository categoriaRepository;
 
 	@Override
+	@MedidorDeTiempo
 	public List<Categoria> getAllCategoria() {
 
 		return this.categoriaRepository.findAll();
