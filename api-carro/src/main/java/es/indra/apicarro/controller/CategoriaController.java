@@ -52,7 +52,7 @@ public class CategoriaController {
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 
-	@RequestMapping(value = "/blog", method = RequestMethod.PUT)
+	@RequestMapping(value = "/categoria", method = RequestMethod.PUT)
 	public ResponseEntity<Categoria> updateToDo(@RequestBody Categoria c) {
 
 		Categoria categoria = this.categoriaService.updateBlog(c);

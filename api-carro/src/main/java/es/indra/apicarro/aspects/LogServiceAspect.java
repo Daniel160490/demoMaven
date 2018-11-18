@@ -4,8 +4,6 @@
 package es.indra.apicarro.aspects;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.context.annotation.Configuration;
@@ -31,11 +29,11 @@ public class LogServiceAspect {
 	/*
 	 * Metodo que calcula el tiempo de ejecucion de una peticion Rest
 	 */
-	@Around("annotation(* es.indra.apicarro.aspects.anotaciones.MedidorDeTiempo)")
-	public void around(ProceedingJoinPoint joinPoint) throws Throwable {
-		long inicio = System.currentTimeMillis();
-		joinPoint.proceed();
-		long tiempo = System.currentTimeMillis() - inicio;
-		System.out.println("Tiempo de ejecucion: " + tiempo + " ms");
-	}
+	/*
+	 * @Around("annotation(* es.indra.apicarro.aspects.anotaciones.MedidorDeTiempo)"
+	 * ) public void around(ProceedingJoinPoint joinPoint) throws Throwable { long
+	 * inicio = System.currentTimeMillis(); joinPoint.proceed(); long tiempo =
+	 * System.currentTimeMillis() - inicio;
+	 * System.out.println("Tiempo de ejecucion: " + tiempo + " ms"); }
+	 */
 }
