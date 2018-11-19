@@ -1,0 +1,10 @@
+
+<h1> {{ titulo }} </h1>
+<ul>
+  <li *ngFor="let curso of cursos">
+    <h2> {{ curso.nombre }} </h2>
+    <p> {{ curso.descripcion }} </p>
+    <p *ngIf="curso.duracion === 8"> Duración completa </p>
+    <p *ngIf="curso.duracion < 8"> Media Jornada </p>
+  </li>
+</ul>

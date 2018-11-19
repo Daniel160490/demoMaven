@@ -1,0 +1,14 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styles: []
+})
+export class AppComponent {
+  title = 'MisCursos';
+  cursos = [
+    {'id': 1 , 'nombre': 'Angular 2', 'descripcion': 'Introducción al desarrollo avanzado en Js', 'duracion': 8},
+    {'id': 2 , 'nombre': 'NodeJS', 'descripcion': 'Introducción al server en Js', 'duracion': 4}];
+
+}
