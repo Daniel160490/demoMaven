@@ -1,15 +1,46 @@
 <div>
-  <h1>{{ titulo }}</h1>
+  <h1>{{ title }}</h1>
 </div>
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <ul>
     <li *ngFor="let curso of cursos" (click)="seleccionar(curso)">
-      <h2>{{ curso.nombre }}</h2>
-      <p>{{ curso.descripcion }}</p>
-      <p *ngIf="curso.duracion === 8; else: elseBlock">Duración completa</p>
+      <h2>{{ curso.nombre | uppercase }}</h2>
+      <p><strong>Descripción: </strong> {{ curso.descripcion }}</p>
+      <p *ngIf="curso.duracion === 8; else: elseBlock">
+        <strong>Duración: </strong> Duración completa
+      </p>
       <ng-template #elseBlock> Media Jornada </ng-template>
-      <p *ngIf="curso.duracion === 120">Duración 3 semanas</p>
+      <p *ngIf="curso.duracion === 120">
+        <strong>Duracion: </strong> 3 semanas
+      </p>
+      <p><strong>Precio: </strong> {{ curso.precio | currency: "EUR":true }}</p>
+      <p><strong>Fecha: </strong> {{ curso.fecha | date: "dd/MM/yyyy" }}</p>
     </li>
   </ul>
 </div>
+
+<h2>--> ELEMENTO SWITCH CON ANGULAR <--</h2>
+
+<div>
+  <button (click)="value = 1">Curso Angular Infinito</button>
+  <button (click)="value = 2">Muerte</button>
+  <button (click)="value = 3">Muerte 2.0</button>
+  <h5>Ha seleccionado : {{ value }}</h5>
+  <hr />
+  <div [ngSwitch]="value">
+    <div *ngSwitchCase="1">
+      1. Template - <b>{{ value }}</b>
+    </div>
+    <div *ngSwitchCase="2">
+      2. Template - <b>{{ value }}</b>
+    </div>
+    <div *ngSwitchCase="3">
+      3. Template - <b>{{ value }}</b>
+    </div>
+    <div *ngSwitchDefault>Default Template</div>
+  </div>
+</div>
+
+<div [ngClass]="getCSSClasses('noche')">Texto en modo noche</div>
+<div [ngClass]="getCSSClasses('dia')">Texto en modo dia</div>
