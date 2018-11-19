@@ -15,8 +15,9 @@
         <strong>Duracion: </strong> 3 semanas
       </p>
       <p><strong>Precio: </strong> {{ curso.precio | currency: "EUR":true }}</p>
+      <p><strong>Precio: </strong> {{ curso.precio | multiplicador }}</p>
       <p><strong>Fecha: </strong> {{ curso.fecha | date: "dd/MM/yyyy" }}</p>
-      <p>{{ curso.fecha | date: "shortTime" }}</p>
+      <strong>Hora: </strong>{{ curso.fecha | date: "shortTime" }}
     </li>
   </ul>
 </div>
