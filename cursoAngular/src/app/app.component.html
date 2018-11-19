@@ -16,6 +16,7 @@
       </p>
       <p><strong>Precio: </strong> {{ curso.precio | currency: "EUR":true }}</p>
       <p><strong>Fecha: </strong> {{ curso.fecha | date: "dd/MM/yyyy" }}</p>
+      <p>{{ curso.fecha | date: "shortTime" }}</p>
     </li>
   </ul>
 </div>
