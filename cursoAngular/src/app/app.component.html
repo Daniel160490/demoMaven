@@ -4,7 +4,8 @@
   <li *ngFor="let curso of cursos">
     <h2> {{ curso.nombre }} </h2>
     <p> {{ curso.descripcion }} </p>
-    <p *ngIf="curso.duracion === 8"> Duración completa </p>
-    <p *ngIf="curso.duracion < 8"> Media Jornada </p>
+    <p *ngIf="curso.duracion === 8; else elseBlock"> Duración completa </p>
+    <ng-template #elseBlock> Media Jornada </ng-template>
+    <p *ngIf="curso.duracion === 120"> Duración 3 semanas </p>
   </li>
 </ul>
