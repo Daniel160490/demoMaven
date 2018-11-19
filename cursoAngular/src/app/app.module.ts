@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 import { Pipe } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { MultiplicadorPipe } from './app.component';
+import { MultiplicadorPipe } from './multiplicador.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MultiplicadorPipe
   ],
   imports: [
     BrowserModule
