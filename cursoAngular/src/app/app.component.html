@@ -1,11 +1,15 @@
+<div>
+  <h1>{{ titulo }}</h1>
+</div>
 
-<h1> {{ titulo }} </h1>
-<ul>
-  <li *ngFor="let curso of cursos">
-    <h2> {{ curso.nombre }} </h2>
-    <p> {{ curso.descripcion }} </p>
-    <p *ngIf="curso.duracion === 8; else elseBlock"> Duración completa </p>
-    <ng-template #elseBlock> Media Jornada </ng-template>
-    <p *ngIf="curso.duracion === 120"> Duración 3 semanas </p>
-  </li>
-</ul>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <ul>
+    <li *ngFor="let curso of cursos" (click)="seleccionar(curso)">
+      <h2>{{ curso.nombre }}</h2>
+      <p>{{ curso.descripcion }}</p>
+      <p *ngIf="curso.duracion === 8; else: elseBlock">Duración completa</p>
+      <ng-template #elseBlock> Media Jornada </ng-template>
+      <p *ngIf="curso.duracion === 120">Duración 3 semanas</p>
+    </li>
+  </ul>
+</div>
