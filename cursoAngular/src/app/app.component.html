@@ -10,11 +10,14 @@
   <app-tracer></app-tracer>
 </div>
 
+
+<app-categoria></app-categoria>
+
 <!-- Listado de cursos imprimiendo con un For -->
 <div class="container">
   <div class="card-deck mb-3 text-center">
     <div class="card mb-4 shadow-sm card-body list-unstyled mt-3 mb-4">
-      <ul>
+      <ul style="list-style:none">
         <li *ngFor="let curso of cursos" (click)="seleccionar(curso)">
           <h2>{{ curso.nombre | uppercase }}</h2>
           <p><strong>Descripción: </strong> {{ curso.descripcion }}</p>

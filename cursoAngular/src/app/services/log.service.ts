@@ -9,8 +9,13 @@ export class LogService {
 
   // Metodo que solo va a imprimir por consola
   // Con los tres puntos decimos que acepte mas parametros
+  // Con el forEach va guardando el contenido de la variable mensaje en msg y lo imprime
   escribirTraza(...mensaje: string[]){
 
-    console.log(mensaje[0], mensaje[1]);
+    mensaje.forEach(msg => {
+      console.log(msg);
+    });
+
   }
+
 }
