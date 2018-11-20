@@ -16,5 +16,9 @@ export class RemoteDataService {
     return this.httpClient.get<Array<Categoria>>('http://localhost:8081/categoria');
   }
 
+  devolverCategoria(id: number){
+    return this.httpClient.get<Categoria>('http://localhost:8081/categoria/'+ id);
+  }
+
 
 }

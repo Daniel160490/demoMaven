@@ -1,3 +1,8 @@
-<p>
-  categoria works!
-</p>
+<div class="">
+  <div class="shadow-sm card-body list-unstyled text-center">
+    <h1>Listado de categorias</h1>
+    <li *ngFor= "let categoria of response">
+      <ul>{{ categoria.nombre }} <a (click)="retornarUnaCategoria(categoria.id)" type="button" class="btn btn-primary btn-xs"> VER + </a> </ul>
+    </li>
+  </div>
+</div>
