@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Categoria } from '../models/categoria';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,11 @@ export class RemoteDataService {
 
   constructor(public httpClient: HttpClient) { }
 
+  /*
+  * Retorna un Observable con un array de Categoria.
+  */
   retornarData(){
-    console.log(this.httpClient.get('http://localhost:8081/categoria'));
+    return this.httpClient.get<Array<Categoria>>('http://localhost:8081/categoria');
   }
 
 

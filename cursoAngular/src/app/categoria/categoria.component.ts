@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RemoteDataService } from '../services/remote-data.service';
+import { Categoria } from '../models/categoria';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-categoria',
@@ -9,10 +11,17 @@ import { RemoteDataService } from '../services/remote-data.service';
 })
 export class CategoriaComponent implements OnInit {
 
+  public data: Observable<Array<Categoria>>;
+
   constructor(public remote: RemoteDataService) { }
 
   ngOnInit() {
-    this.remote.retornarData();
+
+    this.data = this.remote.retornarData();
+
+    this.data.subscribe(arrayData => {
+      console.log(arrayData);
+    });
   }
 
 }
