@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styles: ["./style.css"]
 })
 export class AppComponent {
-  title = "Mis Cursos";
+  title = "< Mis Cursos /> ";
   cursos = [
     {
       id: 1,
