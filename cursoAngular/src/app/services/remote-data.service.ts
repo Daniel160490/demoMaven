@@ -29,7 +29,7 @@ export class RemoteDataService {
     //Establecemos cabeceras
     let headers = new HttpHeaders().set('Content-Type','application/json');
 
-    return this.httpClient.post(' http://localhost:8081/categoria/ ', categoria, {headers: headers});
+    return this.httpClient.post(' http://localhost:8081/categoria/ ', categoria);
   }
 
 }
