@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Categoria } from '../models/categoria';
+import { Observable } from 'rxjs/Observable';
 
 
 
@@ -22,16 +23,12 @@ export class RemoteDataService {
     return this.httpClient.get<Categoria>('http://localhost:8081/categoria/'+ id);
   }
 
-  addProducto(categoria: Categoria): Observable<any>{
-    let json = JSON.stringify(categoria);
-
-    //El backend recogerá un parametro json
-    let params = "json="+json;
+  addCategoria(categoria: Categoria): Observable<any>{
 
     //Establecemos cabeceras
-    let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
+    let headers = new HttpHeaders().set('Content-Type','application/json');
 
-    return this.httpClient.post(' http://localhost:8081/categoria/ '+'categoria', params, {headers: headers});
+    return this.httpClient.post(' http://localhost:8081/categoria/ ', categoria, {headers: headers});
   }
 
 }

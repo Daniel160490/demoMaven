@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Categoria } from '../models/categoria';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { RemoteDataService } from '../services/remote-data.service';
 
 @Component({
   selector: 'app-form-demo',
@@ -14,8 +15,9 @@ export class FormDemoComponent implements OnInit {
   public cat: Categoria;
   public enviado = false;
 
-  constructor() {
+  constructor(public remote:  RemoteDataService) {
     this.cat = new Categoria();
+
   }
 
   ngOnInit() {
@@ -26,7 +28,14 @@ export class FormDemoComponent implements OnInit {
   */
   onSubmit(f: NgForm) {
     this.enviado = true;
-    console.log(this.cat);
+    this.remote.addCategoria(this.cat).subscribe(
+      result => {
+        console.log('Respuesta: ' + result);
+      },
+      error => {
+          console.log(<any>error);
+      }
+  );
     //console.log(this.cat);
   }
 
