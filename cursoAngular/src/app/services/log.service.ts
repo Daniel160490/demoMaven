@@ -13,7 +13,7 @@ export class LogService {
   escribirTraza(...mensaje: string[]){
 
     mensaje.forEach(msg => {
-      console.log(msg);
+      //console.log(msg);
     });
 
   }

@@ -1,8 +1,8 @@
-<div class="">
-  <div class="shadow-sm card-body list-unstyled text-center">
-    <h1>Listado de categorias</h1>
+<div class="container">
+  <div style="width: 300px; background-color: aliceblue" class="list-unstyled text-center shadow-sm card-body">
+    <h3>Listado de categorias</h3>
     <li *ngFor= "let categoria of response">
-      <ul>{{ categoria.nombre }} <a (click)="retornarUnaCategoria(categoria.id)" type="button" class="btn btn-primary btn-xs"> VER + </a> </ul>
+      <ul>{{ categoria.nombre }} <input (click)="retornarUnaCategoria(categoria.id)" type="button" class="btn btn-primary btn-xs" value="Ver +"> </ul>
     </li>
   </div>
 </div>

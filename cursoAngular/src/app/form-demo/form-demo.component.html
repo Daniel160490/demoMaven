@@ -1,0 +1,23 @@
+<div style="width: 400px;" class="shadow-sm">
+  <form (ngSubmit)="onSubmit(catForm);" #catForm="ngForm">
+
+    <input placeholder="Nombre" #nombre maxlength="80" [(ngModel)]="cat.nombre" name="nombre">
+    <button type="submit"> Enviar </button>
+    <button type="button" (click)="limpiar(catForm)"> Limpiar </button>
+
+  </form>
+</div>
+
+
+<div [hidden]="!enviado">
+
+  <div>
+    <p>Datos enviados:</p>
+    <div> <strong> Nombre: </strong> {{ cat.nombre }}</div>
+  </div>
+
+  <br>
+
+  <button (click) = "enviado  = false">Editar</button>
+
+</div>
