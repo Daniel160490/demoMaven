@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Categoria } from '../models/categoria';
 import { NgForm } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { RemoteDataService } from '../services/remote-data.service';
 
 @Component({
